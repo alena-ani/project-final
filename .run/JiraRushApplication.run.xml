@@ -1,0 +1,72 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="JiraRushApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <log_file alias="log" path="$PROJECT_DIR$/logs/jirarush.log" />
+    <module name="jira" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.javarush.jira.JiraRushApplication" />
+    <option name="DEBUG_MODE" value="true" />
+    <option name="ENABLE_JMX_AGENT" value="false" />
+    <option name="ACTIVE_PROFILES" value="prod" />
+    <option name="ALTERNATIVE_JRE_PATH" />
+    <option name="SHORTEN_COMMAND_LINE" value="NONE" />
+    <additionalParameters>
+      <param>
+        <option name="enabled" value="true" />
+        <option name="name" value="DATASOURCE_USERNAME" />
+        <option name="value" value="jira" />
+      </param>
+      <param>
+        <option name="enabled" value="true" />
+        <option name="name" value="DATASOURCE_PASSWORD" />
+        <option name="value" value="JiraRush" />
+      </param>
+      <param>
+        <option name="enabled" value="true" />
+        <option name="name" value="GITHUB_CLIENT_ID" />
+        <option name="value" value="3d0d8738e65881fff266" />
+      </param>
+      <param>
+        <option name="enabled" value="true" />
+        <option name="name" value="GITHUB_CLIENT_SECRET" />
+        <option name="value" value="0f97031ce6178b7dfb67a6af587f37e222a16120" />
+      </param>
+      <param>
+        <option name="enabled" value="true" />
+        <option name="name" value="GOOGLE_CLIENT_ID" />
+        <option name="value" value="329113642700-f8if6pu68j2repq3ef6umd5jgiliup60.apps.googleusercontent.com" />
+      </param>
+      <param>
+        <option name="enabled" value="true" />
+        <option name="name" value="GOOGLE_CLIENT_SECRET" />
+        <option name="value" value="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" />
+      </param>
+      <param>
+        <option name="enabled" value="true" />
+        <option name="name" value="GITLAB_CLIENT_ID" />
+        <option name="value" value="b8520a3266089063c0d8261cce36971defa513f5ffd9f9b7a3d16728fc83a494" />
+      </param>
+      <param>
+        <option name="enabled" value="true" />
+        <option name="name" value="GITLAB_CLIENT_SECRET" />
+        <option name="value" value="e72c65320cf9d6495984a37b0f9cc03ec46be0bb6f071feaebbfe75168117004" />
+      </param>
+      <param>
+        <option name="enabled" value="true" />
+        <option name="name" value="GITLAB_CLIENT_NAME" />
+        <option name="value" value="GitLab" />
+      </param>
+      <param>
+        <option name="enabled" value="true" />
+        <option name="name" value="MAIL_USERNAME" />
+        <option name="value" value="jira4jr@gmail.com" />
+      </param>
+      <param>
+        <option name="enabled" value="true" />
+        <option name="name" value="MAIL_PASSWORD" />
+        <option name="value" value="zdfzsrqvgimldzyj" />
+      </param>
+    </additionalParameters>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

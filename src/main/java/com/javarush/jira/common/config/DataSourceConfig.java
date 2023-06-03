@@ -4,10 +4,13 @@ import com.zaxxer.hikari.HikariDataSource;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 import org.springframework.core.env.Environment;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
@@ -35,9 +38,20 @@ public class DataSourceConfig {
     public DataSource testDataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName(environment.getProperty("spring.datasource.driverClassName", "org.h2.Driver"));
-        dataSource.setUrl(environment.getProperty("spring.datasource.url", "jdbc:h2:mem:jira-test-db"));
+        dataSource.setUrl(environment.getProperty("spring.datasource.url", "jdbc:h2:mem:jira-test-db;MODE=PostgreSQL;NON_KEYWORDS=VALUE"));
         dataSource.setUsername(environment.getProperty("spring.datasource.username", "sa"));
         dataSource.setPassword(environment.getProperty("spring.datasource.password", "password"));
         return dataSource;
+    }
+
+    @Bean
+    @Primary
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory(final DataSource dataSource) {
+        LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
+        em.setDataSource(dataSource);
+        em.setPackagesToScan("com.javarush.jira");
+        em.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
+        em.setPersistenceUnitName("entityManager");
+        return em;
     }
 }
