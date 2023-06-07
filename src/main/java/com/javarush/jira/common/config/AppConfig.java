@@ -44,6 +44,8 @@ public class AppConfig {
         };
     }
 
+
+
     //    https://stackoverflow.com/a/74630129/548473
     @JsonAutoDetect(fieldVisibility = NONE, getterVisibility = ANY)
     interface MixIn {
